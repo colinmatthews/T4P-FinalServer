@@ -2,7 +2,7 @@
 
 The Ecommerce API is used to manage customers, orders, and order items for an ecommerce platform.Base URL
 
-https://t4p-finalserver-production.up.railway.app/Authentication
+https://t4p-finalserver-production.up.railway.app
 
 This API requires authentication using an API key. To authenticate, include the API key in the Authorization header using the Bearer 
 ```makefile
