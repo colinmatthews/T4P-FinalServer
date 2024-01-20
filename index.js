@@ -45,6 +45,16 @@ app.get("/", async(req,res) =>{
 // Customers endpoints
 
 app.get('/customers', async (req, res) => {
+  const name = req.params.name
+  if(name.length > 0){
+    try {
+      const result = await pool.query(`SELECT * FROM customers where name = ${name}`);
+      res.json(result.rows);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: err });
+    }
+  }
   try {
     const result = await pool.query('SELECT * FROM customers');
     res.json(result.rows);
