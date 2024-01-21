@@ -48,7 +48,7 @@ app.get('/customers', async (req, res) => {
   const name = req.query.name
   if(name !== undefined){
     try {
-      const result = await pool.query(`SELECT * FROM customers where name = ${name}`);
+      const result = await pool.query(`SELECT * FROM customers where name = '${name}'`);
       res.json(result.rows);
     } catch (err) {
       console.error(err);
